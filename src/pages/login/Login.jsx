@@ -2,8 +2,8 @@ import { useState } from 'react'
 import { useLogin } from '../../hooks/useLogin'
 
 export default function Login() {
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
+  let [email, setEmail] = useState('admin@admin.com')
+  let [password, setPassword] = useState('admin1234')
   const { error, login } = useLogin()
 
   const handleSubmit = e => {
@@ -36,12 +36,6 @@ export default function Login() {
         <button className='btn'>log in</button>
         {error && <p>{error}</p>}
       </form>
-
-      <div>
-        <h4>Test auth:</h4>
-        <p>login: admin@admin.com</p>
-        <p>password: admin1234</p>
-      </div>
     </main>
   )
 }
