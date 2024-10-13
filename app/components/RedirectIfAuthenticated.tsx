@@ -6,7 +6,7 @@ import { useAuthContext } from '@/hooks/useAuthContext';
 import { ChildrenProps } from '@/types/Auth';
 
 export default function RedirectIfAuthenticated({ children }: ChildrenProps) {
-  const [isChecking, setIsChecking] = useState(true);
+  const [isChecking, setIsChecking] = useState<boolean>(true);
   const router = useRouter();
   const { state } = useAuthContext();
   const { user, authIsReady } = state;

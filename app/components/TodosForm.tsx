@@ -5,7 +5,7 @@ import { useAuthContext } from '@/hooks/useAuthContext';
 import { useFirestore } from '@/hooks/useFirestore';
 
 export default function TodosForm() {
-  const [todo, setTodo] = useState('');
+  const [todo, setTodo] = useState<string>('');
   const { state } = useAuthContext();
   const { addDocument, response } = useFirestore('todos');
 
@@ -19,6 +19,7 @@ export default function TodosForm() {
 
     setTodo('');
 
+    // FIX:
     // Reset the form field when the document is successfully added
     // useEffect(() => {
     //   if (response.success) {

@@ -1,7 +1,5 @@
 'use client';
 
-import { deleteDoc, doc } from 'firebase/firestore';
-import { db } from '@/lib/firebase';
 import { useAuthContext } from '@/hooks/useAuthContext';
 import { useCollection } from '@/hooks/useCollection';
 import { useFirestore } from '@/hooks/useFirestore';
