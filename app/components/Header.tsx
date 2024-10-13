@@ -10,7 +10,7 @@ export default function Header() {
   const { user } = state;
 
   return (
-    <header className='navbar bg-neutral-500'>
+    <header className='navbar bg-neutral-700'>
       <div className='px-4 py-2'>
         <div className='flex items-center justify-end'>
           <ul className='flex items-center gap-4'>
