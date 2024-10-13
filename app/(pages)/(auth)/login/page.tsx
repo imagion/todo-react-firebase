@@ -27,14 +27,14 @@ export default function Login() {
 
   return (
     <>
-      <h2 className='text-center text-2xl'>Логин</h2>
-      <form className='flex flex-col gap-5' onSubmit={handleSubmit}>
+      <h2 className='mb-4 text-center text-2xl'>Логин</h2>
+      <form className='flex w-full flex-col gap-5' onSubmit={handleSubmit}>
         <div>
           <label className='label' htmlFor='userEmail'>
             Адрес электронной почты
           </label>
           <input
-            className='input'
+            className='form-input'
             id='userEmail'
             type='email'
             value={email}
@@ -49,7 +49,7 @@ export default function Login() {
             id='userPassword'
             type='password'
             autoComplete='off'
-            className='input'
+            className='form-input'
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
@@ -58,14 +58,11 @@ export default function Login() {
           </Link> */}
         </div>
         <div className='flex flex-col justify-center gap-2'>
-          <button
-            type='submit'
-            className='rounded bg-blue-500 p-2'
-            disabled={isPending}>
+          <button type='submit' className='button' disabled={isPending}>
             {isPending ? 'Входим...' : 'Вход'}
           </button>
           {error && <p>{error}</p>}
-          <div className='flex items-center gap-2'>
+          <div className='flex flex-wrap items-center gap-2'>
             <span className='text-xs text-gray-400'>Нужна учётная запись?</span>
             <Link href='/signup' className='text-sky-400'>
               Зарегистрироваться
@@ -76,7 +73,7 @@ export default function Login() {
       <hr className='border-neutral-500' />
       <button
         onClick={handleGoogle}
-        className='rounded bg-blue-500 p-2'
+        className='button mt-2'
         disabled={gIsPending}>
         {gIsPending ? 'Входим через Google...' : 'Войти через Google'}
       </button>

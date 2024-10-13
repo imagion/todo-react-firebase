@@ -28,7 +28,7 @@ export default function TodosList() {
             <li
               key={doc.id}
               className='relative flex flex-nowrap items-center justify-between rounded bg-neutral-600 text-xl'>
-              <span className='basis-11/12 pl-2 pr-4'>{doc.todo}</span>
+              <span className='basis-11/12 py-1 pl-2'>{doc.todo}</span>
               <span
                 className='cursor-pointer overflow-hidden rounded bg-red-500 p-2'
                 onClick={() => deleteDocument(doc.id)}>

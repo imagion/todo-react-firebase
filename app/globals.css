@@ -10,6 +10,22 @@
 }
 
 @layer components {
+  .gradient {
+    @apply bg-gradient-to-r from-blue-800 to-indigo-900;
+  }
+  
+  .form {
+    @apply flex w-[min(100%,30rem)] flex-col gap-2 md:gap-4 rounded-xl bg-neutral-700 px-2 py-4  sm:p-10 shadow-xl;
+  }
+  
+  .form-input {
+    @apply rounded w-full border-0 bg-neutral-800 p-2 text-base;
+  }
+  
+  .button {
+    @apply inline-block rounded bg-blue-500 p-3 text-sm text-white hover:bg-blue-600 active:bg-blue-700 focus:outline-none focus:ring focus:ring-blue-400 font-medium uppercase;
+  }
+  
   .label {
     @apply mb-2 block cursor-pointer text-xs font-bold uppercase text-neutral-200;
   }
@@ -17,14 +33,13 @@
   .label-star {
     @apply after:ml-1 after:text-red-600 after:content-["*"];
   }
-
-  .input {
-    @apply w-full rounded border-0 bg-neutral-800 p-2 text-base;
-  }
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+  .error {
+    @apply bg-red-500 text-red-900;
   }
 }

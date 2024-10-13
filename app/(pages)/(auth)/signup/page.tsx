@@ -23,8 +23,8 @@ export default function Signup() {
 
   return (
     <>
-      <h2 className='text-center text-2xl'>Регистрация</h2>
-      <form className='flex flex-col gap-5' onSubmit={handleSubmit}>
+      <h2 className='mb-4 text-center text-2xl'>Регистрация</h2>
+      <form className='flex w-full flex-col gap-5' onSubmit={handleSubmit}>
         <div>
           <label htmlFor='userEmail' className='label label-star'>
             E-mail
@@ -33,7 +33,7 @@ export default function Signup() {
             required
             id='userEmail'
             type='email'
-            className='input'
+            className='form-input'
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
@@ -46,7 +46,7 @@ export default function Signup() {
             required
             id='displayName'
             type='text'
-            className='input'
+            className='form-input'
             value={displayName}
             onChange={(e) => setDisplayName(e.target.value)}
           />
@@ -59,16 +59,13 @@ export default function Signup() {
             required
             id='userPassword'
             type='password'
-            className='input'
+            className='form-input'
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
         <div className='flex flex-col justify-center gap-2'>
-          <button
-            type='submit'
-            className='rounded bg-blue-500 p-2'
-            disabled={isPending}>
+          <button type='submit' className='button' disabled={isPending}>
             {isPending ? 'Регистристрируем...' : 'Зарегистрироваться'}
           </button>
           {error && <p>{error}</p>}
@@ -80,7 +77,7 @@ export default function Signup() {
       <hr className='border-neutral-500' />
       <button
         onClick={handleGoogle}
-        className='rounded bg-blue-500 p-2'
+        className='button mt-2'
         disabled={isPending}>
         {isPending
           ? 'Регистрируем через Google...'

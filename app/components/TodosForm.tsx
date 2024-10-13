@@ -33,13 +33,11 @@ export default function TodosForm() {
         required
         type='text'
         placeholder='Напишите новую задачу'
-        className='rounded p-2 text-neutral-800'
+        className='form-input'
         onChange={(e) => setTodo(e.target.value)}
         value={todo}
       />
-      <button className='inline-block rounded bg-blue-500 p-4 uppercase'>
-        Добавить новую задачу
-      </button>
+      <button className='button'>Добавить новую задачу</button>
     </form>
   );
 }

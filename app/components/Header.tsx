@@ -23,8 +23,8 @@ export default function Header() {
                   <span className='max-sm:hidden'>Привет, </span>
                   {user.email}
                 </li>
-                <li className='rounded-xl bg-red-700 p-1'>
-                  <button className='btn' onClick={logout}>
+                <li>
+                  <button className='button bg-red-500' onClick={logout}>
                     Logout
                   </button>
                 </li>
