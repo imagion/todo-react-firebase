@@ -4,9 +4,10 @@ import { useEffect, useState } from 'react';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '@/lib/firebase';
 import { useAuthContext } from '@/hooks/useAuthContext';
+import { ErrorInterface, LoginHook } from '@/types/Auth';
 
-export const useLogin = () => {
-  const [error, setError] = useState<string | null>(null);
+export const useLogin = (): LoginHook => {
+  const [error, setError] = useState<ErrorInterface | null>(null);
   const [isPending, setIsPending] = useState<boolean>(false);
   const [isCancelled, setIsCancelled] = useState<boolean>(false);
   const { dispatch } = useAuthContext();
@@ -30,7 +31,7 @@ export const useLogin = () => {
     } catch (err: any) {
       if (!isCancelled) {
         console.log(err.message);
-        setError(err.message);
+        setError({ code: err.code, message: err.message });
         setIsPending(false);
       }
     }

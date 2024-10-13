@@ -10,9 +10,10 @@ import {
 } from 'firebase/auth';
 import { auth } from '@/lib/firebase';
 import { useAuthContext } from '@/hooks/useAuthContext';
+import { ErrorInterface, SignupHook } from '@/types/Auth';
 
-export const useSignup = () => {
-  const [error, setError] = useState<string | null>(null);
+export const useSignup = (): SignupHook => {
+  const [error, setError] = useState<ErrorInterface | null>(null);
   const [isPending, setIsPending] = useState<boolean>(false);
   const [isCancelled, setIsCancelled] = useState<boolean>(false);
   const { dispatch } = useAuthContext();
@@ -84,7 +85,7 @@ export const useSignup = () => {
     } catch (err: any) {
       if (!isCancelled) {
         console.log(err.message);
-        setError(err.message);
+        setError({ code: err.code, message: err.message });
         setIsPending(false);
       }
     }
