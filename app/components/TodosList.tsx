@@ -19,7 +19,7 @@ export default function TodosList() {
 
   return (
     <div className='w-full'>
-      <ul>
+      <ul className='flex flex-col gap-2'>
         {error && <p className='text-red-500'>error</p>}
         {!documents && <div>Loading...</div>}
 
@@ -27,10 +27,10 @@ export default function TodosList() {
           documents.map((doc) => (
             <li
               key={doc.id}
-              className='flex items-center justify-between rounded bg-neutral-600 p-4 text-xl'>
-              <span>{doc.todo}</span>
+              className='relative flex flex-nowrap items-center justify-between rounded bg-neutral-600 text-xl'>
+              <span className='basis-11/12 pl-2 pr-4'>{doc.todo}</span>
               <span
-                className='cursor-pointer rounded bg-red-500 p-2'
+                className='cursor-pointer overflow-hidden rounded bg-red-500 p-2'
                 onClick={() => deleteDocument(doc.id)}>
                 <Trashcan width={24} height={24} className='text-red-700' />
               </span>

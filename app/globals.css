@@ -21,37 +21,6 @@
   .input {
     @apply w-full rounded border-0 bg-neutral-800 p-2 text-base;
   }
-  
-  .navbar__toggle {
-    @apply relative z-[200] cursor-pointer hidden;
-  }
-  .navbar__toggle * {
-    @apply block w-9 h-1 bg-neutral-800 transition-transform duration-[0.25s] ease-[ease-in-out,opacity] delay-[0.15s] rounded-2xl;
-  }
-  .navbar__toggle * + * {
-    @apply mt-2;
-  }
-  .navbar__toggle.open :nth-child(1) {
-    @apply rotate-45 translate-x-2 translate-y-[9px];
-  }
-  .navbar__toggle.open :nth-child(2) {
-    @apply w-0 opacity-0;
-  }
-  .navbar__toggle.open :nth-child(3) {
-    @apply -rotate-45 translate-x-2 translate-y-[-9px];
-  }
-  
-  .navbar-main.open {
-    transform: none;
-  }
-  
-  .navigation__item {
-    @apply inline-block ml-6;
-  }
-  
-  .navlink {
-    @apply relative inline-block uppercase transition-[color] duration-[0.15s];
-  }
 }
 
 @layer utilities {

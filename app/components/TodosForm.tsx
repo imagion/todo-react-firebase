@@ -28,16 +28,16 @@ export default function TodosForm() {
   };
 
   return (
-    <form className='flex w-full flex-col gap-4' onSubmit={handleSubmit}>
+    <form className='flex w-full flex-col gap-2' onSubmit={handleSubmit}>
       <input
         required
         type='text'
         placeholder='Напишите новую задачу'
-        className='p-4 text-neutral-800'
+        className='rounded p-2 text-neutral-800'
         onChange={(e) => setTodo(e.target.value)}
         value={todo}
       />
-      <button className='inline-block bg-blue-500 p-4 uppercase'>
+      <button className='inline-block rounded bg-blue-500 p-4 uppercase'>
         Добавить новую задачу
       </button>
     </form>
