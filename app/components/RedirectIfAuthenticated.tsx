@@ -1,16 +1,11 @@
 'use client';
 
-import { ReactNode, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useAuthContext } from '@/hooks/useAuthContext';
+import { ChildrenProps } from '@/types/Auth';
 
-interface RedirectIfAuthenticatedProps {
-  children: ReactNode;
-}
-
-export default function RedirectIfAuthenticated({
-  children,
-}: RedirectIfAuthenticatedProps) {
+export default function RedirectIfAuthenticated({ children }: ChildrenProps) {
   const [isChecking, setIsChecking] = useState(true);
   const router = useRouter();
   const { state } = useAuthContext();

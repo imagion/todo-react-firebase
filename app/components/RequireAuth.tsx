@@ -1,14 +1,11 @@
 'use client';
 
-import { ReactNode, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useAuthContext } from '@/hooks/useAuthContext';
+import { ChildrenProps } from '@/types/Auth';
 
-interface RequireAuthProps {
-  children: ReactNode;
-}
-
-export default function RequireAuth({ children }: RequireAuthProps) {
+export default function RequireAuth({ children }: ChildrenProps) {
   const [isChecking, setIsChecking] = useState(true);
   const router = useRouter();
   const { state } = useAuthContext();

@@ -1,29 +1,12 @@
 'use client';
 
-import {
-  createContext,
-  Dispatch,
-  ReactNode,
-  useEffect,
-  useReducer,
-} from 'react';
-import { onAuthStateChanged, User } from 'firebase/auth';
+import { createContext, Dispatch, useEffect, useReducer } from 'react';
+import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from '@/lib/firebase';
-
-// Define the shape of the state
-type AuthState = {
-  user: User | null;
-  authIsReady: boolean;
-};
-
-// Define the types for the action
-type AuthAction =
-  | { type: 'LOGIN'; payload: User | null }
-  | { type: 'LOGOUT' }
-  | { type: 'AUTH_IS_READY'; payload: User | null };
+import { AuthState, AuthAction, ChildrenProps } from '@/types/Auth';
 
 // Define the initial state
-const initialState: AuthState = {
+export const initialState: AuthState = {
   user: null,
   authIsReady: false,
 };
@@ -48,14 +31,7 @@ export const authReducer = (
   }
 };
 
-// Define the props for the AuthContextProvider
-type AuthContextProviderProps = {
-  children: ReactNode;
-};
-
-export default function AuthContextProvider({
-  children,
-}: AuthContextProviderProps) {
+export default function AuthContextProvider({ children }: ChildrenProps) {
   const [state, dispatch] = useReducer(authReducer, initialState);
 
   // get user information from firebase on first render
