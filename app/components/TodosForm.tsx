@@ -37,7 +37,7 @@ export default function TodosForm() {
         onChange={(e) => setTodo(e.target.value)}
         value={todo}
       />
-      <button className='button'>Добавить новую задачу</button>
+      <button className='button focus-blue'>Добавить новую задачу</button>
     </form>
   );
 }

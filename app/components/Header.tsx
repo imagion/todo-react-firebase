@@ -24,7 +24,9 @@ export default function Header() {
                   {user.email}
                 </li>
                 <li>
-                  <button className='button bg-red-500' onClick={logout}>
+                  <button
+                    className='button focus-red bg-red-500'
+                    onClick={logout}>
                     Logout
                   </button>
                 </li>

@@ -65,7 +65,10 @@ export default function Signup() {
           />
         </div>
         <div className='flex flex-col justify-center gap-2'>
-          <button type='submit' className='button' disabled={isPending}>
+          <button
+            type='submit'
+            className='button focus-blue'
+            disabled={isPending}>
             {isPending ? 'Регистристрируем...' : 'Зарегистрироваться'}
           </button>
           {error && <p>{error}</p>}
@@ -77,7 +80,7 @@ export default function Signup() {
       <hr className='border-neutral-500' />
       <button
         onClick={handleGoogle}
-        className='button mt-2'
+        className='button focus-blue mt-2'
         disabled={isPending}>
         {isPending
           ? 'Регистрируем через Google...'

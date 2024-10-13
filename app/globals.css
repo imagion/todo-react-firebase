@@ -23,7 +23,7 @@
   }
   
   .button {
-    @apply inline-block rounded bg-blue-500 p-3 text-sm text-white hover:bg-blue-600 active:bg-blue-700 focus:outline-none focus:ring focus:ring-blue-400 font-medium uppercase;
+    @apply inline-block rounded bg-blue-500 p-3 text-sm text-white  focus:outline-none focus:ring font-medium uppercase;
   }
   
   .label {
@@ -41,5 +41,11 @@
   }
   .error {
     @apply bg-red-500 text-red-900;
+  }
+  .focus-blue {
+    @apply hover:bg-blue-600 active:bg-blue-700 focus:ring-blue-400;
+  }
+  .focus-red {
+    @apply hover:bg-red-600 focus:ring-red-400 active:bg-red-700;
   }
 }
