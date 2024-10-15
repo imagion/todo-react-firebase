@@ -3,6 +3,7 @@ import { Montserrat } from 'next/font/google';
 import './globals.css';
 import { cn } from '@/app/lib/utils';
 import AuthContextProvider from '@/context/AuthContext';
+import ThemeContextProvider from '@/context/ThemeContext';
 
 const montserrat = Montserrat({ subsets: ['latin'] });
 
@@ -18,11 +19,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={cn(montserrat.className, 'antialiased')}>
+      <body className={cn(montserrat.className, 'text-foreground antialiased')}>
         <AuthContextProvider>
-          <div className='flex min-h-screen flex-col bg-neutral-900'>
-            {children}
-          </div>
+          <ThemeContextProvider>
+            <div className='flex min-h-screen flex-col'>{children}</div>
+          </ThemeContextProvider>
         </AuthContextProvider>
       </body>
     </html>

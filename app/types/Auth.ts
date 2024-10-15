@@ -31,7 +31,3 @@ export type AuthAction =
   | { type: 'LOGIN'; payload: User | null }
   | { type: 'LOGOUT' }
   | { type: 'AUTH_IS_READY'; payload: User | null };
-
-export type ChildrenProps = {
-  children: React.ReactNode;
-};

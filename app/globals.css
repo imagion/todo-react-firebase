@@ -2,11 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
-
-@layer base {  
-  body {
-    @apply text-neutral-50;
-  }
+:root {
+  --background: #fafafa;
+  --foreground: #404040;
+  --input: #d4d4d4;
+  --list: #a3a3a3;
+  
+}
+:root.dark {
+  --background:#404040;
+  --foreground: #fafafa;
+  --input: #262626;
+  --list: #525252;
 }
 
 @layer components {
@@ -15,11 +22,11 @@
   }
   
   .form {
-    @apply flex w-[min(100%,30rem)] flex-col gap-2 md:gap-4 rounded-xl bg-neutral-700 px-2 py-4  sm:p-10 shadow-xl;
+    @apply flex w-[min(100%,30rem)] flex-col gap-2 md:gap-4 rounded-xl bg-background px-2 py-4  sm:p-10 shadow-xl;
   }
   
   .form-input {
-    @apply rounded w-full border-0 bg-neutral-800 p-2 text-base;
+    @apply rounded w-full border-0 bg-input p-2 text-base;
   }
   
   .button {
@@ -27,7 +34,7 @@
   }
   
   .label {
-    @apply mb-2 block cursor-pointer text-xs font-bold uppercase text-neutral-200;
+    @apply mb-2 block cursor-pointer text-xs font-bold uppercase;
   }
 
   .label-star {

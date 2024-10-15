@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '@/lib/firebase';
-import { useAuthContext } from '@/hooks/useAuthContext';
+import { useAuthContext } from '@/hooks/useContext';
 import { ErrorInterface, LoginHook } from '@/types/Auth';
 
 export const useLogin = (): LoginHook => {

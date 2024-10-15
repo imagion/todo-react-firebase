@@ -9,7 +9,7 @@ import {
   UserCredential,
 } from 'firebase/auth';
 import { auth } from '@/lib/firebase';
-import { useAuthContext } from '@/hooks/useAuthContext';
+import { useAuthContext } from '@/hooks/useContext';
 import { ErrorInterface, SignupHook } from '@/types/Auth';
 
 export const useSignup = (): SignupHook => {

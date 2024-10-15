@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { useAuthContext } from '@/hooks/useAuthContext';
+import { useAuthContext } from '@/hooks/useContext';
 import { useFirestore } from '@/hooks/useFirestore';
 
 export default function TodosForm() {

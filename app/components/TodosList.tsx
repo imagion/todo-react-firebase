@@ -1,6 +1,6 @@
 'use client';
 
-import { useAuthContext } from '@/hooks/useAuthContext';
+import { useAuthContext } from '@/hooks/useContext';
 import { useCollection } from '@/hooks/useCollection';
 import { useFirestore } from '@/hooks/useFirestore';
 import Trashcan from '@/public/trashcan.svg';
@@ -25,7 +25,7 @@ export default function TodosList() {
           documents.map((doc) => (
             <li
               key={doc.id}
-              className='relative flex flex-nowrap items-center justify-between rounded bg-neutral-600 text-xl'>
+              className='bg-list relative flex flex-nowrap items-center justify-between rounded text-xl'>
               <span className='basis-11/12 py-1 pl-2'>{doc.todo}</span>
               <span
                 className='cursor-pointer overflow-hidden rounded bg-red-500 p-2'

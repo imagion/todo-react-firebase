@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import { signOut } from 'firebase/auth';
 import { auth } from '@/lib/firebase';
-import { useAuthContext } from '@/hooks/useAuthContext';
+import { useAuthContext } from '@/hooks/useContext';
 
 export const useLogout = () => {
   const [error, setError] = useState<string | null>(null);

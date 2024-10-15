@@ -1,9 +1,15 @@
 'use client';
 
-import { createContext, Dispatch, useEffect, useReducer } from 'react';
+import {
+  createContext,
+  Dispatch,
+  PropsWithChildren,
+  useEffect,
+  useReducer,
+} from 'react';
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from '@/lib/firebase';
-import { AuthState, AuthAction, ChildrenProps } from '@/types/Auth';
+import { AuthState, AuthAction } from '@/types/Auth';
 
 // Define the initial state
 export const initialState: AuthState = {
@@ -31,7 +37,7 @@ export const authReducer = (
   }
 };
 
-export default function AuthContextProvider({ children }: ChildrenProps) {
+export default function AuthContextProvider({ children }: PropsWithChildren) {
   const [state, dispatch] = useReducer(authReducer, initialState);
 
   // get user information from firebase on first render

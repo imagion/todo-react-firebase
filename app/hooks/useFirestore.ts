@@ -14,7 +14,7 @@ import {
   FirestoreAction,
   FirestoreState,
   UseFirestoreReturn,
-} from '@/types/Firestore';
+} from '@/types/Firebase';
 
 // Initial state
 const initialState: FirestoreState = {
