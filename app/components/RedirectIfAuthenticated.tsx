@@ -22,6 +22,7 @@ export default function RedirectIfAuthenticated({
         setIsChecking(false);
       }
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [authIsReady, user]);
 
   // If auth state is not ready yet, return nothing or a loading spinner

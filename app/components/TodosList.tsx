@@ -25,7 +25,7 @@ export default function TodosList() {
           documents.map((doc) => (
             <li
               key={doc.id}
-              className='bg-list relative flex flex-nowrap items-center justify-between rounded text-xl'>
+              className='relative flex flex-nowrap items-center justify-between rounded bg-list text-xl'>
               <span className='basis-11/12 py-1 pl-2'>{doc.todo}</span>
               <span
                 className='cursor-pointer overflow-hidden rounded bg-red-500 p-2'
