@@ -71,7 +71,7 @@ export default function Signup() {
             disabled={isPending}>
             {isPending ? 'Регистристрируем...' : 'Зарегистрироваться'}
           </button>
-          {error && <p>{error}</p>}
+          {error && <p>{error.message}</p>}
           <Link href='/login' className='text-sky-400'>
             Уже зарегистрированы?
           </Link>
@@ -86,7 +86,7 @@ export default function Signup() {
           ? 'Регистрируем через Google...'
           : 'Регистрация через Google'}
       </button>
-      {error && <p>{error}</p>}
+      {error && <p>{error.message}</p>}
     </>
   );
 }

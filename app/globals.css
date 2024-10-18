@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+:root.light {
   --background: #fafafa;
   --foreground: #404040;
   --input: #d4d4d4;

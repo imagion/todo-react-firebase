@@ -64,7 +64,7 @@ export default function Login() {
             disabled={isPending}>
             {isPending ? 'Входим...' : 'Вход'}
           </button>
-          {error && <p>{error}</p>}
+          {error && <p>{error.message}</p>}
           <div className='flex flex-wrap items-center gap-2'>
             <span className='text-xs text-gray-400'>Нужна учётная запись?</span>
             <Link href='/signup' className='text-sky-400'>
@@ -80,7 +80,7 @@ export default function Login() {
         disabled={gIsPending}>
         {gIsPending ? 'Входим через Google...' : 'Войти через Google'}
       </button>
-      {gError && <p>{gError}</p>}
+      {gError && <p>{gError.message}</p>}
     </>
   );
 }

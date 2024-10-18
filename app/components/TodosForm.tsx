@@ -1,13 +1,13 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useAuthContext } from '@/hooks/useContext';
 import { useFirestore } from '@/hooks/useFirestore';
 
 export default function TodosForm() {
   const [todo, setTodo] = useState<string>('');
   const { state } = useAuthContext();
-  const { addDocument, response } = useFirestore('todos');
+  const { addDocument } = useFirestore('todos');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();

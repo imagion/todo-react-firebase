@@ -17,7 +17,7 @@ import {
   OrderByParams,
   QueryParams,
   UseCollectionReturn,
-} from '@/types/Collection';
+} from '@/types/Firebase';
 
 export const useCollection = (
   collectionRef: string,
